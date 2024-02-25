@@ -1,6 +1,9 @@
 import 'package:fall_detection/feature/auth/presentation/views/OnBoarding_view.dart';
+import 'package:fall_detection/feature/auth/presentation/views/signup_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'feature/auth/presentation/views/login_view.dart';
 
 void main() {
   runApp(
@@ -21,6 +24,8 @@ class FallDetectionApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routes: {
           OnBoardingScreen.id: (context) => const OnBoardingScreen(),
+          LoginScreen.id: (context) => LoginScreen(),
+          SignUpScreen.id: (context) => SignUpScreen(),
         },
         initialRoute: OnBoardingScreen.id,
       ),

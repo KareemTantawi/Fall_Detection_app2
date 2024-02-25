@@ -1,5 +1,7 @@
 import 'package:fall_detection/core/utils/assets.dart';
 import 'package:fall_detection/core/widgets/elevated_button_widget.dart';
+import 'package:fall_detection/feature/auth/presentation/views/login_view.dart';
+import 'package:fall_detection/feature/auth/presentation/views/signup_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,48 +18,57 @@ class OnBoardingScreen extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 80.h,
-            ),
-            Align(
-              alignment: Alignment.center,
-              child: Image.asset(
-                AppAssetsImages.onboardingImage,
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 80.h,
               ),
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            const WelcomeText(),
-            SizedBox(
-              height: 26.h,
-            ),
-            const GuidanceText(),
-            SizedBox(
-              height: 40.h,
-            ),
-            ElevatedButtonWidget(
-              tap: () {},
-              title: 'Get Started',
-            ),
-            SizedBox(
-              height: 8.h,
-            ),
-            TextButtonWidget(
-              title: 'Skip',
-              tap: () {},
-            ),
-            SizedBox(
-              height: 35.h,
-            ),
-            TextButtonWidget(
-              title: 'Sign in now',
-              tap: () {},
-            ),
-          ],
+              Align(
+                alignment: Alignment.center,
+                child: Image.asset(
+                  AppAssetsImages.onboardingImage,
+                ),
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              const WelcomeText(),
+              SizedBox(
+                height: 26.h,
+              ),
+              const GuidanceText(),
+              SizedBox(
+                height: 40.h,
+              ),
+              ElevatedButtonWidget(
+                tap: () {
+                  Navigator.pushNamed(context, SignUpScreen.id);
+                },
+                title: 'Get Started',
+              ),
+              SizedBox(
+                height: 8.h,
+              ),
+              TextButtonWidget(
+                title: 'Skip',
+                tap: () {
+                  Navigator.pushNamed(context, LoginScreen.id);
+                },
+              ),
+              SizedBox(
+                height: 35.h,
+              ),
+              TextButtonWidget(
+                title: 'Sign in now',
+                tap: () {
+                  Navigator.pushNamed(context, LoginScreen.id);
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
