@@ -3,8 +3,8 @@ import 'package:fall_detection/core/widgets/elevated_button_widget.dart';
 import 'package:fall_detection/core/widgets/text_form_feild_widget.dart';
 import 'package:fall_detection/feature/auth/presentation/views/signup_view.dart';
 import 'package:fall_detection/feature/auth/presentation/widgets/signin_container.dart';
-import 'package:fall_detection/feature/auth/presentation/widgets/signup_container.dart';
-import 'package:fall_detection/feature/auth/presentation/widgets/text_button_widget.dart';
+import 'package:fall_detection/feature/home/presenation/views/bottom_nav_bar.dart';
+import 'package:fall_detection/feature/home/presenation/views/home_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -19,7 +19,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  @override
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   GlobalKey<FormState> _key = GlobalKey<FormState>();
@@ -87,8 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           validator: (value) {
                             if (value!.isEmpty ||
                                 !value.contains('@') ||
-                                !value.contains('.com') ||
-                                !value.contains('.in')) {
+                                !value.contains('.com')) {
                               return 'Please Enter Email';
                             }
                             return null;
@@ -134,6 +132,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           tap: () {
                             if (_key.currentState!.validate()) {
                               // Navigator.pushNamed(context, SignupScreen.id);
+                              Navigator.pushNamedAndRemoveUntil(
+                                  context,
+                                  BottomNavBar.id,
+                                  (Route<dynamic> route) => false);
                               print('validate');
                             }
                           },

@@ -17,7 +17,6 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  @override
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _nameController = TextEditingController();
@@ -75,9 +74,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             validator: (value) {
                               if (value!.isEmpty ||
                                   !value.contains('@') ||
-                                  !value.contains('.com') ||
-                                  !value.contains('.in') ||
-                                  value.length < 5) {
+                                  !value.contains('.com')) {
                                 return 'Please Enter Email';
                               } else {
                                 return null;

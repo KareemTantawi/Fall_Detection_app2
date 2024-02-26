@@ -4,6 +4,7 @@ import 'package:fall_detection/core/theming/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// ignore: must_be_immutable
 class ElevatedButtonWidget extends StatelessWidget {
   ElevatedButtonWidget({
     super.key,
