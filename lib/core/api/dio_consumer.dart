@@ -43,6 +43,7 @@ class DioConsumer extends ApiConsumer {
   @override
   Future get(String path,
       {Object? data, Map<String, dynamic>? queryParameters}) async {
+    dio.options.headers['Accept']='application/json';
     try {
       final response = await dio.get(
         path,
@@ -80,7 +81,10 @@ class DioConsumer extends ApiConsumer {
     dynamic data,
     Map<String, dynamic>? queryParameters,
     bool isFromData = false,
+        String ?token
   }) async {
+
+  dio.options.headers['Accept']='application/json';
     try {
       final response = await dio.post(
         path,
