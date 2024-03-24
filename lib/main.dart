@@ -1,17 +1,27 @@
+import 'package:dio/dio.dart';
+import 'package:fall_detection/feature/auth/presentation/Manger/Cubits/Auth_Cubit/Auth_Cubit.dart';
 import 'package:fall_detection/feature/auth/presentation/views/OnBoarding_view.dart';
 import 'package:fall_detection/feature/auth/presentation/views/signup_view.dart';
 import 'package:fall_detection/feature/home/presenation/views/bottom_nav_bar.dart';
 import 'package:fall_detection/feature/home/presenation/views/home_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'core/api/dio_consumer.dart';
+import 'core/cache/cache_helper.dart';
 import 'feature/auth/presentation/views/login_view.dart';
 import 'feature/notification/presentation/views/notification_view.dart';
 import 'feature/patient/presentation/views/patient_view.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  CacheHelper().init();
+
   runApp(
-    const FallDetectionApp(),
+    BlocProvider(
+        create: (context) => AuthCubit(DioConsumer(dio: Dio())),
+        child: const FallDetectionApp()),
   );
 }
 
