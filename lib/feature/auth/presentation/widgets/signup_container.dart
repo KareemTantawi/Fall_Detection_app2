@@ -1,4 +1,4 @@
-import 'package:fall_detection/core/theming/colors.dart';
+import 'package:fall_detection/core/styles/colors/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -14,7 +14,7 @@ class SignupContainer extends StatelessWidget {
       width: double.infinity,
       color: AppColors.primaryColor,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 32),
+        padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 32.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

@@ -1,4 +1,4 @@
-import 'package:fall_detection/core/theming/colors.dart';
+import 'package:fall_detection/core/styles/colors/colors.dart';
 import 'package:fall_detection/feature/home/presenation/widgets/circle_avater_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

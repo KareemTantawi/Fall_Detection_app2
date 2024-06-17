@@ -1,5 +1,5 @@
-import 'package:fall_detection/core/theming/colors.dart';
-import 'package:fall_detection/core/utils/assets.dart';
+import 'package:fall_detection/core/styles/colors/colors.dart';
+import 'package:fall_detection/core/styles/images/assets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,9 +23,9 @@ class PatientCard extends StatelessWidget {
             color: Color(0xffD3E4EC),
             elevation: 8,
             child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 32,
+              padding: EdgeInsets.symmetric(
+                horizontal: 16.h,
+                vertical: 32.h,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

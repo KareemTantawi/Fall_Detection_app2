@@ -1,9 +1,8 @@
-import 'package:fall_detection/core/utils/assets.dart';
-import 'package:fall_detection/core/widgets/elevated_button_widget.dart';
+import 'package:fall_detection/core/styles/images/assets.dart';
+import 'package:fall_detection/core/common/widgets/elevated_button_widget.dart';
 import 'package:fall_detection/feature/auth/presentation/views/login_view.dart';
 import 'package:fall_detection/feature/auth/presentation/views/signup_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../widgets/guidance_text_widget.dart';
@@ -17,7 +16,7 @@ class OnBoardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16.r),
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
@@ -52,7 +51,7 @@ class OnBoardingScreen extends StatelessWidget {
               SizedBox(
                 height: 8.h,
               ),
-              TextButtonWidget(
+              ButtonTextWidget(
                 title: 'Skip',
                 tap: () {
                   Navigator.pushNamed(context, LoginScreen.id);
@@ -61,7 +60,7 @@ class OnBoardingScreen extends StatelessWidget {
               SizedBox(
                 height: 35.h,
               ),
-              TextButtonWidget(
+              ButtonTextWidget(
                 title: 'Sign in now',
                 tap: () {
                   Navigator.pushNamed(context, LoginScreen.id);

@@ -1,17 +1,15 @@
-import 'package:fall_detection/core/theming/colors.dart';
-import 'package:fall_detection/core/widgets/elevated_button_widget.dart';
-import 'package:fall_detection/core/widgets/text_form_feild_widget.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'package:fall_detection/core/styles/colors/colors.dart';
+import 'package:fall_detection/core/common/widgets/elevated_button_widget.dart';
+import 'package:fall_detection/core/common/widgets/text_form_feild_widget.dart';
 import 'package:fall_detection/feature/auth/presentation/views/signup_view.dart';
 import 'package:fall_detection/feature/auth/presentation/widgets/signin_container.dart';
 import 'package:fall_detection/feature/home/presenation/views/bottom_nav_bar.dart';
-import 'package:fall_detection/feature/home/presenation/views/home_view.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({super.key});
+  const LoginScreen({super.key});
   static String id = '/login';
 
   @override
@@ -19,10 +17,11 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-  GlobalKey<FormState> _key = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final GlobalKey<FormState> _key = GlobalKey<FormState>();
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.primaryColor,
@@ -87,7 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             if (value!.isEmpty ||
                                 !value.contains('@') ||
                                 !value.contains('.com')) {
-                              return 'Please Enter Email';
+                              return 'Please Enter Correct Email';
                             }
                             return null;
                           },
@@ -128,18 +127,23 @@ class _LoginScreenState extends State<LoginScreen> {
                         SizedBox(
                           height: 20.h,
                         ),
-                        ElevatedButtonWidget(
-                          tap: () {
-                            if (_key.currentState!.validate()) {
-                              // Navigator.pushNamed(context, SignupScreen.id);
-                              Navigator.pushNamedAndRemoveUntil(
-                                  context,
-                                  BottomNavBar.id,
-                                  (Route<dynamic> route) => false);
-                              print('validate');
-                            }
-                          },
-                          title: 'Log in',
+                        SizedBox(
+                          height: 55.h,
+                          width: double.infinity,
+                          child: ElevatedButtonWidget(
+                            tap: () {
+                              if (_key.currentState!.validate()) {
+                                // Navigator.pushNamed(context, SignupScreen.id);
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context,
+                                    BottomNavBar.id,
+                                    (Route<dynamic> route) => false);
+                                // ignore: avoid_print
+                                print('validate');
+                              }
+                            },
+                            title: 'Log In',
+                          ),
                         ),
                         SizedBox(
                           height: 8.h,

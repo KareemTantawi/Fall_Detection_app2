@@ -1,15 +1,13 @@
-import 'package:fall_detection/core/theming/colors.dart';
-import 'package:fall_detection/core/widgets/elevated_button_widget.dart';
-import 'package:fall_detection/core/widgets/text_form_feild_widget.dart';
+import 'package:fall_detection/core/styles/colors/colors.dart';
+import 'package:fall_detection/core/common/widgets/elevated_button_widget.dart';
+import 'package:fall_detection/core/common/widgets/text_form_feild_widget.dart';
 import 'package:fall_detection/feature/auth/presentation/widgets/signup_container.dart';
 import 'package:fall_detection/feature/auth/presentation/widgets/text_button_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUpScreen extends StatefulWidget {
-  SignUpScreen({super.key});
+  const SignUpScreen({super.key});
   static String id = '/signup';
 
   @override
@@ -17,12 +15,12 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _genderController = TextEditingController();
-  TextEditingController _phoneController = TextEditingController();
-  GlobalKey<FormState> _key = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _genderController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final GlobalKey<FormState> _key = GlobalKey<FormState>();
   @override
   void dispose() {
     // TODO: implement dispose
@@ -164,7 +162,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           SizedBox(
                             height: 5.h,
                           ),
-                          TextButtonWidget(
+                          ButtonTextWidget(
                             tap: () {
                               Navigator.pushNamed(context, '/login');
                             },

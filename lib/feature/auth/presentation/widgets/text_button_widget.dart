@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
-class TextButtonWidget extends StatelessWidget {
-  TextButtonWidget({
+class ButtonTextWidget extends StatelessWidget {
+  ButtonTextWidget({
     super.key,
     required this.title,
     required this.tap,

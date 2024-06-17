@@ -1,4 +1,4 @@
-import 'package:fall_detection/core/theming/colors.dart';
+import 'package:fall_detection/core/styles/colors/colors.dart';
 
 // import '..\theming\colors.dart';
 import 'package:flutter/material.dart';
@@ -22,15 +22,15 @@ class ElevatedButtonWidget extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primaryColor,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(18),
+            borderRadius: BorderRadius.circular(18.r),
           ),
           elevation: 10,
         ),
         onPressed: tap,
         child: Text(
           title,
-          style: const TextStyle(
-            fontSize: 18,
+          style: TextStyle(
+            fontSize: 18.sp,
             color: Colors.white,
           ),
         ),

@@ -1,4 +1,4 @@
-import 'package:fall_detection/core/theming/colors.dart';
+import 'package:fall_detection/core/styles/colors/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -14,13 +14,14 @@ class SigninContainer extends StatelessWidget {
       width: double.infinity,
       color: AppColors.primaryColor,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 32),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 32.h),
         child: Text(
           'Log In',
           style: TextStyle(
-              fontSize: 32.sp,
-              fontWeight: FontWeight.bold,
-              color: Colors.white),
+            fontSize: 32.sp,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
         ),
       ),
     );
