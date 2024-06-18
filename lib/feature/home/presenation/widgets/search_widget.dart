@@ -20,7 +20,7 @@ class _SearchWidgetState extends State<SearchWidget> {
       width: 260.w,
       decoration: BoxDecoration(
         // color: AppColors.primaryColor,
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(30.r),
       ),
       child: TextField(
         onSubmitted: (value) {},
@@ -40,7 +40,7 @@ class _SearchWidgetState extends State<SearchWidget> {
           hintText: 'Search for patient',
           hintStyle: TextStyle(
             color: Colors.grey.withOpacity(0.6),
-            fontSize: 14.sp,
+            fontSize: 14,
           ),
         ),
       ),

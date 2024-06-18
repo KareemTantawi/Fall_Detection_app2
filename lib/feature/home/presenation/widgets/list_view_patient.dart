@@ -1,4 +1,5 @@
 import 'package:fall_detection/core/styles/colors/colors.dart';
+import 'package:fall_detection/core/utils/spacing.dart';
 import 'package:fall_detection/feature/home/presenation/widgets/circle_avater_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -24,9 +25,7 @@ class ListViewPatient extends StatelessWidget {
             itemBuilder: (context, index) => CircleAvaterImage(),
           ),
         ),
-        SizedBox(
-          width: 25.w,
-        ),
+        horizontalSpace(25),
         Column(
           children: [
             Container(
@@ -45,11 +44,11 @@ class ListViewPatient extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
+            const Text(
               'Map',
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 18.sp,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             )

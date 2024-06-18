@@ -6,7 +6,7 @@ class PatientScreen extends StatelessWidget {
   static String id = 'patient_view';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Text('Patient'),
       ),

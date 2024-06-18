@@ -29,8 +29,8 @@ class ElevatedButtonWidget extends StatelessWidget {
         onPressed: tap,
         child: Text(
           title,
-          style: TextStyle(
-            fontSize: 18.sp,
+          style: const TextStyle(
+            fontSize: 18,
             color: Colors.white,
           ),
         ),

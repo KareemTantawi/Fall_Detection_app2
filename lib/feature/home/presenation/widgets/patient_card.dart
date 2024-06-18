@@ -1,5 +1,6 @@
 import 'package:fall_detection/core/styles/colors/colors.dart';
 import 'package:fall_detection/core/styles/images/assets.dart';
+import 'package:fall_detection/core/utils/spacing.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,7 +21,7 @@ class PatientCard extends StatelessWidget {
           width: double.infinity,
           // color: Colors.grey,
           child: Card(
-            color: Color(0xffD3E4EC),
+            color: const Color(0xffD3E4EC),
             elevation: 8,
             child: Padding(
               padding: EdgeInsets.symmetric(
@@ -45,44 +46,45 @@ class PatientCard extends StatelessWidget {
                       SizedBox(
                         width: 8.w,
                       ),
-                      Text(
+                      const Text(
                         'patient',
                         style: TextStyle(
-                          fontSize: 20.sp,
+                          fontSize: 14,
                         ),
                       ),
-                      SizedBox(
-                        width: 22.w,
-                      ),
-                      Text(
+                      const Spacer(),
+                      const Text(
                         '5 min ago',
                         style: TextStyle(
                           color: Colors.grey,
-                          fontSize: 18.sp,
+                          fontSize: 14,
                         ),
                       ),
                       IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.more_horiz,
-                          size: 32.sp,
+                          size: 28,
                         ),
                       ),
                     ],
                   ),
+                  verticalSpace(10),
                   SizedBox(
-                    height: 20.h,
+                    height: 150.h,
+                    width: double.infinity,
+                    child: Image.asset(
+                      AppAssetsImages.fallingImage,
+                      // height: 165.h,
+                      // width: double.infinity,
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                  Image.asset(
-                    AppAssetsImages.fallingImage,
-                  ),
-                  SizedBox(
-                    height: 15.h,
-                  ),
+                  verticalSpace(18),
                   Text(
                     'I need help in this location',
                     style: TextStyle(
-                      fontSize: 16.sp,
+                      fontSize: 16,
                       color: Colors.black.withOpacity(0.6),
                     ),
                   ),

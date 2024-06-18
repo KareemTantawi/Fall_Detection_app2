@@ -54,32 +54,32 @@ class _BottomNavBarState extends State<BottomNavBar> {
             });
           },
           type: BottomNavigationBarType.fixed,
-          items: <BottomNavigationBarItem>[
+          items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.home,
-                size: 32.sp,
+                size: 23,
               ),
               label: 'Home',
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.notifications,
-                size: 32.sp,
+                size: 23,
               ),
               label: 'Notification',
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.person,
-                size: 32.sp,
+                size: 23,
               ),
               label: 'Person',
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.chat,
-                size: 32.sp,
+                size: 23,
               ),
               label: 'Message',
             ),

@@ -1,3 +1,6 @@
+import 'package:fall_detection/core/extensions/context_extension.dart';
+import 'package:fall_detection/core/routes/routes.dart';
+import 'package:fall_detection/core/utils/spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -29,7 +32,9 @@ class _LoginScreenState extends State<LoginScreen> {
         backgroundColor: AppColors.primaryColor,
         elevation: 0,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            context.pop();
+          },
           icon: const Icon(
             Icons.arrow_back,
             color: Colors.white,
@@ -40,11 +45,11 @@ class _LoginScreenState extends State<LoginScreen> {
             onPressed: () {
               Navigator.pushNamed(context, SignUpScreen.id);
             },
-            child: Text(
+            child: const Text(
               'Sign Up',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 20.sp,
+                fontSize: 20,
               ),
             ),
           ),
@@ -65,17 +70,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
                 child: Form(
                   key: _key,
                   child: SingleChildScrollView(
                     physics: const BouncingScrollPhysics(),
                     child: Column(
                       children: [
-                        SizedBox(
-                          height: 40.h,
-                        ),
+                        verticalSpace(40),
                         TextFormFieldWidget(
                           controller: _emailController,
                           keyboardType: TextInputType.emailAddress,
@@ -115,18 +117,16 @@ class _LoginScreenState extends State<LoginScreen> {
                           alignment: Alignment.centerRight,
                           child: TextButton(
                             onPressed: () {},
-                            child: Text(
+                            child: const Text(
                               'Forget Password?',
                               style: TextStyle(
                                 color: Colors.grey,
-                                fontSize: 20.sp,
+                                fontSize: 20,
                               ),
                             ),
                           ),
                         ),
-                        SizedBox(
-                          height: 20.h,
-                        ),
+                        verticalSpace(20),
                         SizedBox(
                           height: 55.h,
                           width: double.infinity,
@@ -134,10 +134,15 @@ class _LoginScreenState extends State<LoginScreen> {
                             tap: () {
                               if (_key.currentState!.validate()) {
                                 // Navigator.pushNamed(context, SignupScreen.id);
-                                Navigator.pushNamedAndRemoveUntil(
-                                    context,
-                                    BottomNavBar.id,
-                                    (Route<dynamic> route) => false);
+                                // Navigator.pushNamedAndRemoveUntil(
+                                //     context,
+                                //     BottomNavBar.id,
+                                //     (Route<dynamic> route) => false);
+                                context.pushAndRemoveUntil(
+                                  Routes.bottomNavBarScreen,
+                                  // predicate: (_) => false,
+                                  // fullscreenDialog: true,
+                                );
                                 // ignore: avoid_print
                                 print('validate');
                               }
@@ -145,18 +150,17 @@ class _LoginScreenState extends State<LoginScreen> {
                             title: 'Log In',
                           ),
                         ),
-                        SizedBox(
-                          height: 8.h,
-                        ),
+                        verticalSpace(8),
                         TextButton(
                           onPressed: () {
-                            Navigator.pushNamed(context, SignUpScreen.id);
+                            // Navigator.pushNamed(context, SignUpScreen.id);
+                            context.pushName(Routes.sighupScreen);
                           },
                           child: Text(
                             'need an account? Sign Up,',
                             style: TextStyle(
                               color: Colors.grey.withOpacity(0.7),
-                              fontSize: 18.sp,
+                              fontSize: 18,
                             ),
                           ),
                         ),

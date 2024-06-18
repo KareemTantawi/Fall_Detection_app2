@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class GuidanceText extends StatelessWidget {
   const GuidanceText({
@@ -12,7 +11,7 @@ class GuidanceText extends StatelessWidget {
       textAlign: TextAlign.center,
       'FallGruad is the Ultimate app for elders and caregivers Download now',
       style: TextStyle(
-        fontSize: 14.sp,
+        fontSize: 14,
         color: Colors.grey.shade500,
       ),
     );

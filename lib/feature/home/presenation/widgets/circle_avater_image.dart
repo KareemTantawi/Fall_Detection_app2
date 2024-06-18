@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CircleAvaterImage extends StatelessWidget {
-  CircleAvaterImage({
+  const CircleAvaterImage({
     super.key,
   });
 
@@ -25,10 +25,10 @@ class CircleAvaterImage extends StatelessWidget {
               ),
             ),
           ),
-          Text(
+          const Text(
             'Patient1',
             style: TextStyle(
-              fontSize: 16.sp,
+              fontSize: 12,
               color: Colors.black,
               fontWeight: FontWeight.bold,
             ),

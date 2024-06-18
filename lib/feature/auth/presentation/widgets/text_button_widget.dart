@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class ButtonTextWidget extends StatelessWidget {
@@ -19,7 +18,7 @@ class ButtonTextWidget extends StatelessWidget {
         child: Text(
           title,
           style: TextStyle(
-            fontSize: 16.sp,
+            fontSize: 16,
             color: Colors.grey.shade500,
           ),
         ),

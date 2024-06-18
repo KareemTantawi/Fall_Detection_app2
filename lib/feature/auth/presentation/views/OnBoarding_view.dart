@@ -1,5 +1,8 @@
+import 'package:fall_detection/core/extensions/context_extension.dart';
+import 'package:fall_detection/core/routes/routes.dart';
 import 'package:fall_detection/core/styles/images/assets.dart';
 import 'package:fall_detection/core/common/widgets/elevated_button_widget.dart';
+import 'package:fall_detection/core/utils/spacing.dart';
 import 'package:fall_detection/feature/auth/presentation/views/login_view.dart';
 import 'package:fall_detection/feature/auth/presentation/views/signup_view.dart';
 import 'package:flutter/material.dart';
@@ -16,54 +19,45 @@ class OnBoardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(16.r),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 80.h,
-              ),
+              verticalSpace(80),
               Align(
                 alignment: Alignment.center,
                 child: Image.asset(
                   AppAssetsImages.onboardingImage,
                 ),
               ),
-              SizedBox(
-                height: 20.h,
-              ),
+              verticalSpace(20),
               const WelcomeText(),
-              SizedBox(
-                height: 26.h,
-              ),
+              verticalSpace(16),
               const GuidanceText(),
-              SizedBox(
-                height: 40.h,
-              ),
+              verticalSpace(40),
               ElevatedButtonWidget(
                 tap: () {
-                  Navigator.pushNamed(context, SignUpScreen.id);
+                  // Navigator.pushNamed(context, SignUpScreen.id);
+                  context.pushName(Routes.sighupScreen);
                 },
                 title: 'Get Started',
               ),
-              SizedBox(
-                height: 8.h,
-              ),
+              verticalSpace(8),
               ButtonTextWidget(
                 title: 'Skip',
                 tap: () {
-                  Navigator.pushNamed(context, LoginScreen.id);
+                  // Navigator.pushNamed(context, LoginScreen.id);
+                  context.pushName(Routes.loginInScreen);
                 },
               ),
-              SizedBox(
-                height: 35.h,
-              ),
+              verticalSpace(35),
               ButtonTextWidget(
                 title: 'Sign in now',
                 tap: () {
-                  Navigator.pushNamed(context, LoginScreen.id);
+                  // Navigator.pushNamed(context, LoginScreen.id);
+                  context.pushName(Routes.loginInScreen);
                 },
               ),
             ],

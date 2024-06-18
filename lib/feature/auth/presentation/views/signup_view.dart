@@ -1,6 +1,9 @@
+import 'package:fall_detection/core/extensions/context_extension.dart';
+import 'package:fall_detection/core/routes/routes.dart';
 import 'package:fall_detection/core/styles/colors/colors.dart';
 import 'package:fall_detection/core/common/widgets/elevated_button_widget.dart';
 import 'package:fall_detection/core/common/widgets/text_form_feild_widget.dart';
+import 'package:fall_detection/core/utils/spacing.dart';
 import 'package:fall_detection/feature/auth/presentation/widgets/signup_container.dart';
 import 'package:fall_detection/feature/auth/presentation/widgets/text_button_widget.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +35,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     _passwordController.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
@@ -53,16 +57,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(vertical: 16, horizontal: 28),
+                      EdgeInsets.symmetric(vertical: 16.h, horizontal: 28.w),
                   child: SingleChildScrollView(
                     physics: const BouncingScrollPhysics(),
                     child: Form(
                       key: _key,
                       child: Column(
                         children: [
-                          SizedBox(
-                            height: 10.h,
-                          ),
+                          verticalSpace(10),
                           TextFormFieldWidget(
                             controller: _emailController,
                             keyboardType: TextInputType.emailAddress,
@@ -79,9 +81,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               }
                             },
                           ),
-                          SizedBox(
-                            height: 20.h,
-                          ),
+                          verticalSpace(20),
                           TextFormFieldWidget(
                             obscureText: true,
                             controller: _passwordController,
@@ -97,9 +97,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               }
                             },
                           ),
-                          SizedBox(
-                            height: 20.h,
-                          ),
+                          verticalSpace(20),
                           TextFormFieldWidget(
                             controller: _nameController,
                             keyboardType: TextInputType.name,
@@ -114,9 +112,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               }
                             },
                           ),
-                          SizedBox(
-                            height: 20.h,
-                          ),
+                          verticalSpace(20),
                           TextFormFieldWidget(
                             controller: _genderController,
                             keyboardType: TextInputType.name,
@@ -130,9 +126,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               return null;
                             },
                           ),
-                          SizedBox(
-                            height: 20.h,
-                          ),
+                          verticalSpace(20),
                           TextFormFieldWidget(
                             controller: _phoneController,
                             keyboardType: TextInputType.phone,
@@ -146,25 +140,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               return null;
                             },
                           ),
-                          SizedBox(
-                            height: 20.h,
-                          ),
+                          verticalSpace(20),
                           ElevatedButtonWidget(
                             tap: () {
                               if (_key.currentState!.validate()) {
-                                Navigator.pushNamed(context, '/login');
+                                // Navigator.pushNamed(context, '/login');
+                                context.pushName(Routes.loginInScreen);
                               } else {
                                 print('error');
                               }
                             },
                             title: 'Sign up',
                           ),
-                          SizedBox(
-                            height: 5.h,
-                          ),
+                          verticalSpace(5),
                           ButtonTextWidget(
                             tap: () {
-                              Navigator.pushNamed(context, '/login');
+                              // Navigator.pushNamed(context, '/login');
+                              context.pushName(Routes.loginInScreen);
                             },
                             title: 'Already have an account? Log in',
                           )

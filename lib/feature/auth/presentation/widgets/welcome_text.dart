@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WelcomeText extends StatelessWidget {
   const WelcomeText({
@@ -8,11 +7,11 @@ class WelcomeText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return const Text(
       textAlign: TextAlign.center,
       "Welcome to FallGuard Let's get started",
       style: TextStyle(
-        fontSize: 28.sp,
+        fontSize: 28,
         fontWeight: FontWeight.w700,
       ),
     );
