@@ -3,8 +3,6 @@ import 'package:fall_detection/core/routes/routes.dart';
 import 'package:fall_detection/core/styles/images/assets.dart';
 import 'package:fall_detection/core/common/widgets/elevated_button_widget.dart';
 import 'package:fall_detection/core/utils/spacing.dart';
-import 'package:fall_detection/feature/auth/presentation/views/login_view.dart';
-import 'package:fall_detection/feature/auth/presentation/views/signup_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

@@ -6,7 +6,7 @@ class NotificationScreen extends StatelessWidget {
   static String id = 'notification_view';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Text('Notification'),
       ),

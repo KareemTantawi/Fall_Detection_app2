@@ -9,7 +9,6 @@ import 'package:fall_detection/core/common/widgets/elevated_button_widget.dart';
 import 'package:fall_detection/core/common/widgets/text_form_feild_widget.dart';
 import 'package:fall_detection/feature/auth/presentation/views/signup_view.dart';
 import 'package:fall_detection/feature/auth/presentation/widgets/signin_container.dart';
-import 'package:fall_detection/feature/home/presenation/views/bottom_nav_bar.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

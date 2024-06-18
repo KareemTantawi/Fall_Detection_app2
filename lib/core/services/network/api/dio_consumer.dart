@@ -30,7 +30,7 @@ class DioConsumer extends ApiConsumer {
         queryParameters: queryParameters,
       );
       return response.data;
-    } on DioException catch (e) {
+    } on DioException {
       // handleDioExceptions(e);
     }
   }
@@ -45,7 +45,7 @@ class DioConsumer extends ApiConsumer {
         queryParameters: queryParameters,
       );
       return response.data;
-    } on DioException catch (e) {
+    } on DioException {
       // handleDioExceptions(e);
     }
   }
@@ -64,7 +64,7 @@ class DioConsumer extends ApiConsumer {
         queryParameters: queryParameters,
       );
       return response.data;
-    } on DioException catch (e) {
+    } on DioException {
       // handleDioExceptions(e);
     }
   }
@@ -90,7 +90,7 @@ class DioConsumer extends ApiConsumer {
         ),
       );
       return response.data;
-    } on DioException catch (e) {
+    } on DioException {
       // handleDioExceptions(e);
     }
   }
@@ -116,7 +116,7 @@ class DioConsumer extends ApiConsumer {
         ),
       );
       return response.data;
-    } on DioException catch (e) {
+    } on DioException {
       // handleDioExceptions(e);
     }
     throw UnimplementedError();
