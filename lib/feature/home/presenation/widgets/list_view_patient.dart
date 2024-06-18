@@ -1,7 +1,8 @@
+import 'package:fall_detection/core/extensions/context_extension.dart';
+import 'package:fall_detection/core/routes/routes.dart';
 import 'package:fall_detection/core/styles/colors/colors.dart';
 import 'package:fall_detection/core/utils/spacing.dart';
 import 'package:fall_detection/feature/home/presenation/widgets/circle_avater_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -22,7 +23,7 @@ class ListViewPatient extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 10,
             // ImageContainer(),
-            itemBuilder: (context, index) => CircleAvaterImage(),
+            itemBuilder: (context, index) => const CircleAvaterImage(),
           ),
         ),
         horizontalSpace(25),
@@ -31,13 +32,16 @@ class ListViewPatient extends StatelessWidget {
             Container(
               height: 60.h,
               width: 60.w,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: AppColors.primaryColor,
-                shape: BoxShape.circle,
+                // shape: BoxShape.circle,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(60.r),
+                ),
               ),
               child: IconButton(
                 onPressed: () {
-                  print('tapped');
+                  context.pushName(Routes.mapScreen);
                 },
                 icon: const Icon(
                   Icons.map,
