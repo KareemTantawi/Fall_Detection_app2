@@ -7,6 +7,7 @@ import 'package:fall_detection/feature/home/presenation/views/home_view.dart';
 import 'package:fall_detection/feature/map/presentation/views/map_screen.dart';
 import 'package:fall_detection/feature/notification/presentation/views/notification_view.dart';
 import 'package:fall_detection/feature/patient/presentation/views/patient_view.dart';
+import 'package:fall_detection/feature/profile/presenation/profile_screen.dart';
 
 import './routes.dart';
 
@@ -50,6 +51,10 @@ class AppRouter {
       case Routes.mapScreen:
         return MaterialPageRoute(
           builder: (_) => const MapPage(),
+        );
+      case Routes.mapScreen:
+        return MaterialPageRoute(
+          builder: (_) => const ProfileScreen(),
         );
       default:
         return MaterialPageRoute(

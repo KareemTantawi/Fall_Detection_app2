@@ -1,6 +1,6 @@
 import 'package:fall_detection/core/styles/colors/colors.dart';
 import 'package:fall_detection/feature/chat/presentation/view/chat_view.dart';
-import 'package:fall_detection/feature/patient/presentation/views/patient_view.dart';
+import 'package:fall_detection/feature/profile/presenation/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../notification/presentation/views/notification_view.dart';
@@ -20,7 +20,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   List<Widget> screens = [
     const HomeScreen(),
     const NotificationScreen(),
-    const PatientScreen(),
+    const ProfileScreen(),
     const ChatView(),
   ];
 
